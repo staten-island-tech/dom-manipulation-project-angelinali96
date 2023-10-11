@@ -8,3 +8,16 @@ DOM manipulation. The project must contain the following
 -Create a function that clears the input fields after injecting the object
 -Create a function to remove an object after they have been created
 */
+const DOMSelectors = {
+    button : document.getElementById("btn"), 
+    input1 : document.getElementById("input1"),
+    input2 : document.getElementById("input2"),
+    text : document.querySelector(".p"),
+};
+function changeText(text){
+    text.innerHTML = "change";
+}
+DOMSelectors.button.addEventListener("click", function(){
+        changeText(DOMSelectors.text);
+    }
+);
