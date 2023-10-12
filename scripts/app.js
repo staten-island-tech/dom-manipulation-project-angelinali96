@@ -12,12 +12,17 @@ const DOMSelectors = {
     button : document.getElementById("btn"), 
     input1 : document.getElementById("input1"),
     input2 : document.getElementById("input2"),
-    text : document.querySelector(".p"),
+    text : document.querySelector("p"),
 };
-function changeText(text){
-    text.innerHTML = "change";
+function synth(inputs){
+    DOMSelectors.text.insertAdjacentHTML("afterend", `<strong>Your new favorite color is ${DOMSelectors.input1.value} ${inputs.item2}~</strong>`)
 }
+const inputs = {
+    item1: DOMSelectors.input1.value,
+    item2: DOMSelectors.input2.value
+};
 DOMSelectors.button.addEventListener("click", function(){
-        changeText(DOMSelectors.text);
+        synth(inputs);
+        console.log(DOMSelectors.input1.value);
     }
 );
