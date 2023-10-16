@@ -24,3 +24,15 @@ h1{
     font-size: 3rem;
     text-align: center;
 }
+.card{
+    padding: 0.5rem;
+    background-color: #1a0035;
+    margin: 0.5rem 0;
+    width: 22%;
+    height: auto;
+    text-align: center;
+    align-items: center;
+    border-radius: 15px;
+    box-sizing: border-box;
+    display: flex;
+}

@@ -11,22 +11,28 @@ DOM manipulation. The project must contain the following
 const DOMSelectors = {
     form: document.querySelector("#form"),
     button : document.getElementById("btn"), 
-    delete : document.getElementById("del"),
+    delete : document.querySelectorAll(".del"),
     input1 : document.getElementById("input1"),
     input2 : document.getElementById("input2"),
+    input3 : document.getElementById("input3"),
     text : document.querySelector("p"),
+    res : document.querySelectorAll(".card")
 };
 function synth(DOMSelectors){
-    DOMSelectors.text.insertAdjacentHTML("afterend", `<p>Your new favorite color is ${DOMSelectors.input1.value} ${DOMSelectors.input2.value}~</p>`)
+    DOMSelectors.text.insertAdjacentHTML("afterend", `<div class="card"><p>Your new favorite color is ${DOMSelectors.input1.value} ${DOMSelectors.input2.value} ${DOMSelectors.input3.value}~</p><button class="del">remove</button></div>`)
 }
 DOMSelectors.form.addEventListener("submit", function(event){
         event.preventDefault();
         synth(DOMSelectors);
         DOMSelectors.input1.value = "";
         DOMSelectors.input2.value = "";
+        DOMSelectors.input3.value = "";
     }
 );
+function remove(){
 DOMSelectors.delete.addEventListener("click", function(){
-
+    console.log(DOMSelectors.delete.parentElement);
+    //DOMSelectors.res.hidden = true;
 }
 );
+}
