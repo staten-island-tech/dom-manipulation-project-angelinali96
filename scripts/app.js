@@ -30,6 +30,7 @@ DOMSelectors.form.addEventListener("submit", function(event){
         DOMSelectors.input1.value = "";
         DOMSelectors.input2.value = "";
         DOMSelectors.input3.value = "";
+        removeRes();
     }
 );
 function removeRes(){
