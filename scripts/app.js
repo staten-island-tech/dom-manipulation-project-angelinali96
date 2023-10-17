@@ -19,7 +19,10 @@ const DOMSelectors = {
     res : document.querySelectorAll(".card")
 };
 function synth(DOMSelectors){
-    DOMSelectors.text.insertAdjacentHTML("afterend", `<div class="card"><p>Your new favorite color is ${DOMSelectors.input1.value} ${DOMSelectors.input2.value} ${DOMSelectors.input3.value}~</p><button class="del">remove</button></div>`)
+    DOMSelectors.text.insertAdjacentHTML("afterend", `<div class="card">
+    <p>Your new favorite color is ${DOMSelectors.input1.value} ${DOMSelectors.input2.value} ${DOMSelectors.input3.value}~</p>
+    <button class="del">remove</button>
+    </div>`)
 }
 DOMSelectors.form.addEventListener("submit", function(event){
         event.preventDefault();
@@ -29,10 +32,11 @@ DOMSelectors.form.addEventListener("submit", function(event){
         DOMSelectors.input3.value = "";
     }
 );
-function remove(){
-DOMSelectors.delete.addEventListener("click", function(){
-    console.log(DOMSelectors.delete.parentElement);
-    //DOMSelectors.res.hidden = true;
-}
-);
+function removeRes(){
+    const delButton = document.querySelectorAll(".del");
+    delButton.forEach(
+        (del) => del.addEventListener("click", function(){
+            del.parentElement.remove();
+        })
+    );
 }
