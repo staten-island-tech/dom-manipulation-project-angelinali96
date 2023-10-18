@@ -38,6 +38,7 @@ function removeRes(){
     delButton.forEach(
         (del) => del.addEventListener("click", function(){
             del.parentElement.remove();
+            //del.parentElement.style.display = none;
         })
     );
 }
