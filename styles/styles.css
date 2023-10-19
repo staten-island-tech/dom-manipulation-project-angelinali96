@@ -24,6 +24,11 @@ h1{
     font-size: 3rem;
     text-align: center;
 }
+.result{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
 .card{
     padding: 0.5rem;
     background-color: #1a0035;
@@ -34,5 +39,4 @@ h1{
     align-items: center;
     border-radius: 15px;
     box-sizing: border-box;
-    display: flex;
 }

@@ -16,10 +16,10 @@ const DOMSelectors = {
     input2 : document.getElementById("input2"),
     input3 : document.getElementById("input3"),
     text : document.querySelector("p"),
-    res : document.querySelectorAll(".card")
+    res : document.querySelector(".result")
 };
 function synth(DOMSelectors){
-    DOMSelectors.text.insertAdjacentHTML("afterend", `<div class="card">
+    DOMSelectors.res.insertAdjacentHTML("afterbegin", `<div class="card">
     <p>Your new favorite color is ${DOMSelectors.input1.value} ${DOMSelectors.input2.value} ${DOMSelectors.input3.value}~</p>
     <button class="del">remove</button>
     </div>`)
