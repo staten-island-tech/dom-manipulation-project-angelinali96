@@ -18,15 +18,20 @@ const DOMSelectors = {
     text : document.querySelector("p"),
     res : document.querySelector(".result")
 };
-function synth(DOMSelectors){
+const newColor = {
+    input1: DOMSelectors.input1,
+    input2: DOMSelectors.input2,
+    input3: DOMSelectors.input3
+};
+function addRes(DOMSelectors){
     DOMSelectors.res.insertAdjacentHTML("afterbegin", `<div class="card">
-    <p>Your new favorite color is ${DOMSelectors.input1.value} ${DOMSelectors.input2.value} ${DOMSelectors.input3.value}~</p>
+    <p>Your new favorite color is ${newColor.input1.value} ${newColor.input2.value} ${newColor.input3.value}~</p>
     <button class="del">remove</button>
     </div>`)
 }
 DOMSelectors.form.addEventListener("submit", function(event){
         event.preventDefault();
-        synth(DOMSelectors);
+        addRes(DOMSelectors);
         DOMSelectors.input1.value = "";
         DOMSelectors.input2.value = "";
         DOMSelectors.input3.value = "";
@@ -42,3 +47,5 @@ function removeRes(){
         })
     );
 }
+
+//const album; addcard; clearfields; addremovebutton
